@@ -366,6 +366,9 @@ html.booted .hero h1 .ch{
 .pcard:hover .pvis .sweep{transform:translateX(130%)}
 .pvis svg{position:absolute;inset:0;width:100%;height:100%}
 .pvis.has-cover{background:var(--deep)}
+.csoon{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--ash);
+  background:linear-gradient(160deg,var(--t2),var(--deep) 70%)}
 .pcover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:52% 46%;
   transform:scale(1.02);transition:transform 1.2s cubic-bezier(.2,.8,.2,1);z-index:1}
 .pcard:hover .pcover{transform:scale(1.06)}
@@ -1244,8 +1247,11 @@ projects:[
   desc:"Two years on the chassis subteam: the tractive system status indicator, the driver dashboard enclosure, and the mounting plates and jigs that hold the car together.",
   meta:[["Team","UW Formula Electric"],["Tools","Ansys FEA"],["Method","Poka-yoke"]],
   motif:"layers", chip:"Panel P-02 \u00B7 Chassis",
+  cover:"assets/img/cover-chassis-f12c1f54.webp",
+  coverAlt:"The space frame chassis on the build table.",
+  coverPos:"50% 52%",
   detail:{
-    lede:"In my first year of Mechanical Engineering I joined the FSAE student design team on the chassis subteam. It was there that I had my first hands-on experience manufacturing, learning structural design and assembly, and working in a professional team environment. Over the two years since I have worked through both school and co-op terms, alongside the most talented engineers of every generation, refining my own skills while making lasting connections. <em>The highlights include the tractive system status indicator, the dashboard enclosure, front and rear mounting plates, a PCB enclosure, and mounting jigs.</em>",
+    lede:"In my first year of Mechanical Engineering I joined the FSAE student design team on the chassis subteam. It was there that I had my first hands-on experience manufacturing, learning structural design and assembly, and working in a professional team environment. <em>The highlights include the tractive system status indicator, the dashboard enclosure, front and rear mounting plates, a PCB enclosure, and mounting jigs.</em>",
     facts:[["Team","UW Formula Electric"],["Seasons","2025 \u2013 2026"],["Role","Chassis subteam"],["Tools","SolidWorks \u00B7 Ansys FEA"],["Build","3D print \u00B7 lathe \u00B7 waterjet"]],
     hero:{cap:"Space frame chassis \u00B7 finishing a weld joint", img:"assets/img/space-frame-chassis-u00b7-finishing-a-w-87a87e33.webp", size:"full hero-shot"},
     parts:[
@@ -1328,6 +1334,9 @@ projects:[
   desc:"Test hardware built for Ford, GM, Renault and Stellantis programmes: a coolant module torque rig, an active purge pump vibration stand, and the procedures that drive them.",
   meta:[["Built at","Schaeffler & Veritas"],["Tools","CATIA V5"],["Customers","GM \u00B7 Renault \u00B7 Ford"]],
   motif:"halo", chip:"Panel P-03 \u00B7 Testing",
+  cover:"assets/img/cover-testing-146c164a.webp",
+  coverAlt:"The Schaeffler test and validation team at the end of the co-op term.",
+  coverPos:"50% 38%",
   detail:{
     lede:"At both Veritas AG and Schaeffler Motion Technologies I worked closely with the R&D and testing divisions on new products for Ford, GM, Renault and Stellantis. <em>Core projects included a GM coolant manifold actuator, a vibration and durability setup for Renault, torque testing for the manifold actuator, and transmission line validation and crimp designs for Ford and Stellantis.</em>",
     facts:[["Built at","Schaeffler \u00B7 Veritas"],["Period","2025 \u2013 2026"],["Customers","Ford \u00B7 GM \u00B7 Renault \u00B7 Stellantis"],["Tools","CATIA V5 \u00B7 SolidWorks"],["Output","Rigs \u00B7 fixtures \u00B7 CTP"]],
@@ -1396,17 +1405,15 @@ projects:[
 {
   slug:"drive-cycle", index:"P-04", title:"Drive Cycle Model", year:"2026",
   tags:["MATLAB","Simulink","EV powertrain"],
-  desc:"A backward-facing EV powertrain model simulating energy consumption over EPA drive cycles: road load, motor efficiency map, inverter losses.",
-  meta:[["Tools","MATLAB \u00B7 Simulink"],["Domain","Energy \u00B7 thermal"],["Status","Jun 2026 \u2013 present"]],
+  desc:"Updating and currently in progress! Check back later for changes made!",
+  meta:[["Tools","MATLAB \u00B7 Simulink"],["Status","In progress"]],
   motif:"ledger", chip:"Panel P-04 \u00B7 Drive Cycle",
+  coverNote:"Coming soon!",
   detail:{
-    lede:"A backward-facing powertrain model that answers a sizing question: how much energy the car actually spends over a standard cycle, and where it goes. <em>The losses it reports are the same losses the cooling system has to carry away</em>, which is where this work meets the cooling architecture study.",
-    facts:[["Tools","MATLAB / Simulink"],["Period","June 2026 \u2013 present"],["Cycles","EPA drive cycles"],["Models","Road load \u00B7 motor map \u00B7 inverter"],["Status","In progress"]],
-    sections:[
-      {h:"The model", p:["Developing a backward-facing EV powertrain model in MATLAB/Simulink to simulate energy consumption over EPA drive cycles, integrating road load dynamics, a loss-derived motor efficiency map and inverter losses."]},
-      {h:"Link to cooling", p:["Connecting the model's loss outputs to prior R&D work on parallel versus series cooling architectures, looking for the relationship between motor, inverter and battery I\u00B2R losses and cooling system sizing across duty cycles."]}
-    ],
-    media:[{motif:"ledger",chip:"Replace: energy trace over the cycle"},{motif:"radar",chip:"Replace: motor efficiency map"},{motif:"halo",wide:true,chip:"Replace: Simulink model schematic"}]
+    lede:"Updating and currently in progress! Check back later for changes made!",
+    facts:[["Tools","MATLAB / Simulink"],["Status","In progress"]],
+    sections:[],
+    media:[]
   }
 },
 ],
@@ -1623,7 +1630,8 @@ CONTENT.projects.forEach(function(p){
         '<svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h11M8.5 1.5 12 5l-3.5 3.5" stroke="currentColor" stroke-width="1.2"/></svg></a>'+
     '</div>'+
     '<div class="pvis'+(p.cover?" has-cover":"")+'">'+
-      (p.cover?'<img class="pcover" src="'+p.cover+'" alt="'+esc(p.coverAlt||p.title)+'">':motifSVG(p.motif))+
+      (p.cover?'<img class="pcover" src="'+p.cover+'" alt="'+esc(p.coverAlt||p.title)+'"'+(p.coverPos?' style="object-position:'+esc(p.coverPos)+'"':'')+'>'
+        :p.coverNote?'<span class="csoon">'+esc(p.coverNote)+'</span>':motifSVG(p.motif))+
       '<div class="sweep"></div><span class="chip">'+esc(p.chip)+'</span></div>';
   el.addEventListener("click",function(e){
     if(e.target.closest("a"))return;
@@ -1802,13 +1810,14 @@ function renderProject(p,i){
     '</div></div>'+
     (p.detail.hero&&p.detail.hero.img?'<div class="'+(p.detail.hero.bleed?"dmedia bleed":"wrap dmedia")+' prv p4">'+figHTML({cap:p.detail.hero.cap,img:p.detail.hero.img,size:p.detail.hero.size||"full",fit:p.detail.hero.fit})+'</div>'
        :mediaHTML(p.detail.media.slice(0,1).map(function(m){var c=Object.assign({},m);c.wide=true;return c})))+
+    ((p.detail.parts&&p.detail.parts.length)||(p.detail.sections&&p.detail.sections.length)?
     '<div class="dbody"><div class="wrap">'+
       (p.detail.parts?partsHTML(p.detail.parts):
         p.detail.sections.map(function(s,k){
           return '<div class="dsec prv p4"><h3><span class="num">'+String(k+1).padStart(2,"0")+'</span>'+esc(s.h)+'</h3>'+
           '<div class="dprose">'+s.p.map(function(par){return "<p>"+rich(par)+"</p>"}).join("")+'</div></div>';
         }).join(""))+
-    '</div></div>'+
+    '</div></div>':'')+
     (p.detail.parts?"":mediaHTML(p.detail.media.slice(1)))+
     nextHTML("Next project · "+next.index,next.title,"#/projects/"+next.slug);
   afterRender();
